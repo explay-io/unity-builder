@@ -105,8 +105,8 @@ Resources:
     Type: 'AWS::ECS::TaskDefinition'
     Properties:
       Family: !Ref ServiceName
-      Cpu: !Ref 4096
-      Memory: !Ref 30720
+      Cpu: 4096
+      Memory: 30720
       NetworkMode: awsvpc
       Volumes:
         - Name: efs-data
