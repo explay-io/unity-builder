@@ -10,11 +10,11 @@ export class TaskParameterSerializer {
     return [
       {
         name: 'ContainerMemory',
-        value: 8192,
+        value: '8192',
       },
       {
         name: 'ContainerCpu',
-        value: 4096,
+        value: '4096',
       },
       {
         name: 'BUILD_TARGET',
