@@ -10,11 +10,11 @@ export class TaskParameterSerializer {
     return [
       {
         name: 'ContainerMemory',
-        value: CloudRunnerState.buildParams.cloudRunnerMemory,
+        value: 8192,
       },
       {
         name: 'ContainerCpu',
-        value: CloudRunnerState.buildParams.cloudRunnerCpu,
+        value: 4096,
       },
       {
         name: 'BUILD_TARGET',
