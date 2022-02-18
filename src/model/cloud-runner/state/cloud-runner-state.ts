@@ -68,7 +68,7 @@ export class CloudRunnerState {
   }
 
   public static get targetBuildRepoUrl(): string {
-    return `https://${CloudRunnerState.buildParams.githubToken}@github.com/${CloudRunnerState.buildParams.githubRepo}.git`;
+    return `https://${CloudRunnerState.buildParams.gitPrivateToken}@github.com/${CloudRunnerState.buildParams.githubRepo}.git`;
   }
 
   public static get buildVolumeFolder() {
