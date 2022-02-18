@@ -37,10 +37,10 @@ export class SetupStep implements StepInterface {
         )}"`,
       );
       CloudRunnerLogger.logLine(
-        `git clone -q ${CloudRunnerState.unityBuilderRepoUrl} "${CloudRunnerState.builderPathFull.replace(
-          /\\/g,
-          `/`,
-        )}"`,
+        `git clone ${CloudRunnerState.targetBuildRepoUrl} ${path.resolve(
+          `..`,
+          path.basename(CloudRunnerState.repoPathFull),
+        )}`,
       );
       return await CloudRunnerState.CloudRunnerProviderPlatform.runTask(
         CloudRunnerState.buildParams.buildGuid,

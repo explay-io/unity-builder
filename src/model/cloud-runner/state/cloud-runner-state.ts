@@ -64,7 +64,7 @@ export class CloudRunnerState {
   }
 
   public static get unityBuilderRepoUrl(): string {
-    return `https://${CloudRunnerState.buildParams.githubToken}@github.com/game-ci/unity-builder.git`;
+    return `https://${CloudRunnerState.buildParams.gitPrivateToken}@github.com/explay-io/unity-builder.git`;
   }
 
   public static get targetBuildRepoUrl(): string {
