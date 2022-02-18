@@ -38,9 +38,7 @@ export class SetupStep implements StepInterface {
         ${hooks.filter((x) => x.hook.includes(`before`)).map((x) => x.commands) || ' '}
         export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
         mkdir -p ${CloudRunnerState.builderPathFull.replace(/\\/g, `/`)}
-        git clone -q -b ${CloudRunnerState.branchName} ${
-          CloudRunnerState.unityBuilderRepoUrl
-        } "${CloudRunnerState.builderPathFull.replace(/\\/g, `/`)}"
+        git clone -q ${CloudRunnerState.unityBuilderRepoUrl} "${CloudRunnerState.builderPathFull.replace(/\\/g, `/`)}"
         ${Input.cloudRunnerTests ? '' : '#'} tree ${CloudRunnerState.builderPathFull.replace(/\\/g, `/`)}
         chmod +x ${path.join(CloudRunnerState.builderPathFull, 'dist', `index.js`).replace(/\\/g, `/`)}
         node ${path.join(CloudRunnerState.builderPathFull, 'dist', `index.js`).replace(/\\/g, `/`)} -m remote-cli
