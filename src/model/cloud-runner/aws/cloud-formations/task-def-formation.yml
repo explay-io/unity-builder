@@ -106,7 +106,7 @@ Resources:
     Properties:
       Family: !Ref ServiceName
       Cpu: 4096
-      Memory: 30GB
+      Memory: 30720
       NetworkMode: awsvpc
       Volumes:
         - Name: efs-data
@@ -125,8 +125,8 @@ Resources:
           - !Ref 'AWS::NoValue'
       ContainerDefinitions:
         - Name: !Ref ServiceName
-          Cpu: !Ref ContainerCpu
-          Memory: !Ref ContainerMemory
+          Cpu: 4096
+          Memory: 30720
           Image: !Ref ImageUrl
           EntryPoint:
             Fn::Split:
