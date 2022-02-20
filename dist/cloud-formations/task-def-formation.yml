@@ -105,8 +105,8 @@ Resources:
     Type: 'AWS::ECS::TaskDefinition'
     Properties:
       Family: !Ref ServiceName
-      Cpu: 4096
-      Memory: 30720
+      Cpu: 2048
+      Memory: 8192
       NetworkMode: awsvpc
       Volumes:
         - Name: efs-data
@@ -126,7 +126,7 @@ Resources:
       ContainerDefinitions:
         - Name: !Ref ServiceName
           Cpu: 2048
-          Memory: 8192
+          Memory: 7680
           Image: !Ref ImageUrl
           EntryPoint:
             Fn::Split:
