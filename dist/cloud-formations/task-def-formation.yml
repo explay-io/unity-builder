@@ -125,8 +125,8 @@ Resources:
           - !Ref 'AWS::NoValue'
       ContainerDefinitions:
         - Name: !Ref ServiceName
-          Cpu: 4096
-          Memory: 30720
+          Cpu: 2048
+          Memory: 8192
           Image: !Ref ImageUrl
           EntryPoint:
             Fn::Split:
