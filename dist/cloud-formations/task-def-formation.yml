@@ -125,8 +125,8 @@ Resources:
           - !Ref 'AWS::NoValue'
       ContainerDefinitions:
         - Name: !Ref ServiceName
-          # Cpu: !Ref ContainerCpu
-          # Memory: !Ref ContainerMemory
+          Cpu: !Ref ContainerCpu
+          Memory: !Ref ContainerMemory
           Image: !Ref ImageUrl
           EntryPoint:
             Fn::Split:
